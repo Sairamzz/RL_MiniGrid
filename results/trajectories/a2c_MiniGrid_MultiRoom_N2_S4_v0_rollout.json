@@ -1,0 +1,57 @@
+{
+  "success": 1,
+  "steps": 4,
+  "total_reward": 0.9816,
+  "trajectory": [
+    {
+      "step": 0,
+      "pos": [
+        6,
+        16
+      ],
+      "dir": 3,
+      "action": null,
+      "reward": 0.0
+    },
+    {
+      "step": 1,
+      "pos": [
+        6,
+        15
+      ],
+      "dir": 3,
+      "action": 2,
+      "reward": -0.001
+    },
+    {
+      "step": 2,
+      "pos": [
+        6,
+        15
+      ],
+      "dir": 3,
+      "action": 3,
+      "reward": -0.001
+    },
+    {
+      "step": 3,
+      "pos": [
+        6,
+        14
+      ],
+      "dir": 3,
+      "action": 2,
+      "reward": -0.001
+    },
+    {
+      "step": 4,
+      "pos": [
+        6,
+        13
+      ],
+      "dir": 3,
+      "action": 2,
+      "reward": 0.9846
+    }
+  ]
+}

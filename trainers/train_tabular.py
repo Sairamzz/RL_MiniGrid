@@ -7,9 +7,19 @@ from utils.io import save_csv
 from utils.checkpoints import save_pickle
 
 
-def run_episode(env, agent, max_steps=150, training=True):
-    obs, info = env.reset()
+def run_episode(env, agent, max_steps=150, training=True, seed=None):
+    if seed is None:
+        obs, info = env.reset()
+    else:
+        obs, info = env.reset(seed=seed)
+    
     agent.begin_episode()
+
+    if hasattr(agent, "set_env_reference"):
+        agent.set_env_reference(env)
+
+    if hasattr(agent, "set_initial_particle"):
+        agent.set_initial_particle(env)
 
     total_reward = 0.0
     steps = 0
@@ -25,7 +35,11 @@ def run_episode(env, agent, max_steps=150, training=True):
 
         next_obs, reward, done, truncated, info = env.step(action)
 
-        reward = float(reward) - 0.001  # Small step penalty to encourage shorter solutions
+        if hasattr(agent, "step_penalty"):
+            reward = float(reward) - agent.step_penalty
+        else:
+            reward = float(reward)
+
         # Error Debug
         # print("action:", action, type(action))
         # print("reward:", reward, type(reward))

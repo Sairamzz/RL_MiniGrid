@@ -1,14 +1,12 @@
 import gymnasium as gym
+from gymnasium import spaces
 
-class ThreeActionWrapper(gym.ActionWrapper): # This wrapper reduces the minigrid action space from 7 to 3 actions
-    def __init__(self, env):
+
+class ActionSubsetWrapper(gym.ActionWrapper):
+    def __init__(self, env, allowed_actions):
         super().__init__(env)
-        self.action_space = gym.spaces.Discrete(3)
-        self.action_map = {
-            0: 0, # turn left
-            1: 1, # turn right
-            2: 2  # move forward
-        }
+        self.allowed_actions = allowed_actions
+        self.action_space = spaces.Discrete(len(allowed_actions))
 
-    def action(self, action):
-        return self.action_map[int(action)]
+    def action(self, act):
+        return self.allowed_actions[act]

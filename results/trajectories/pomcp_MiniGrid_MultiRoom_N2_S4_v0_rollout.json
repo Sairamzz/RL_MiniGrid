@@ -1,0 +1,458 @@
+{
+  "success": 1,
+  "steps": 40,
+  "total_reward": 0.856,
+  "trajectory": [
+    {
+      "step": 0,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 1,
+      "action": null,
+      "action_name": "start",
+      "reward": 0.0
+    },
+    {
+      "step": 1,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 1,
+      "action": 3,
+      "action_name": "toggle",
+      "reward": 0.0
+    },
+    {
+      "step": 2,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 3,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 4,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 5,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.0
+    },
+    {
+      "step": 6,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 1,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 7,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 0,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 8,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 9,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 10,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 1,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 11,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 12,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.0
+    },
+    {
+      "step": 13,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 3,
+      "action_name": "toggle",
+      "reward": 0.0
+    },
+    {
+      "step": 14,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 15,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 16,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 17,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 18,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 1,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 19,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 20,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.0
+    },
+    {
+      "step": 21,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 22,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.0
+    },
+    {
+      "step": 23,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 24,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 25,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.0
+    },
+    {
+      "step": 26,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 0,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 27,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 28,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 29,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 30,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 3,
+      "action_name": "toggle",
+      "reward": 0.0
+    },
+    {
+      "step": 31,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 32,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 33,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 0,
+      "action_name": "left",
+      "reward": 0.0
+    },
+    {
+      "step": 34,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 2,
+      "action": 3,
+      "action_name": "toggle",
+      "reward": 0.0
+    },
+    {
+      "step": 35,
+      "pos": [
+        13,
+        13
+      ],
+      "dir": 3,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 36,
+      "pos": [
+        13,
+        12
+      ],
+      "dir": 3,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.0
+    },
+    {
+      "step": 37,
+      "pos": [
+        13,
+        12
+      ],
+      "dir": 3,
+      "action": 3,
+      "action_name": "toggle",
+      "reward": 0.0
+    },
+    {
+      "step": 38,
+      "pos": [
+        13,
+        11
+      ],
+      "dir": 3,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.0
+    },
+    {
+      "step": 39,
+      "pos": [
+        13,
+        11
+      ],
+      "dir": 0,
+      "action": 1,
+      "action_name": "right",
+      "reward": 0.0
+    },
+    {
+      "step": 40,
+      "pos": [
+        14,
+        11
+      ],
+      "dir": 0,
+      "action": 2,
+      "action_name": "forward",
+      "reward": 0.856
+    }
+  ]
+}
