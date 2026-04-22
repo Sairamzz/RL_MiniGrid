@@ -1,10 +1,9 @@
 # RL Navigation Project
 
 Starter code for a MiniGrid MultiRoom project comparing:
-- Random baseline
-- Prioritized Sweeping baseline
-- POMCP-lite (history tree + particle filter over latent full states)
-- PPO via Stable-Baselines3
+- POMCP
+- PPO
+- A2C
 
 ## Install
 
@@ -19,23 +18,72 @@ Random:
 python main.py --agent random --env-id MiniGrid-MultiRoom-N4-S5-v0 --episodes 50
 ```
 
-Prioritized Sweeping baseline:
+POMCP:
 ```bash
-python main.py --agent ps --env-id MiniGrid-MultiRoom-N4-S5-v0 --episodes 200
-```
-
-POMCP-lite:
-```bash
-python main.py --agent pomcp --env-id MiniGrid-MultiRoom-N4-S5-v0 --episodes 100 --num-sims 100
+python main.py --mode visualize --agent pomcp --env-id MiniGrid-MultiRoom-N2-S4-v0 --max-steps 250
 ```
 
 PPO:
+- Train
 ```bash
-python main.py --agent ppo --env-id MiniGrid-MultiRoom-N4-S5-v0 --total-timesteps 50000
+python main.py --mode train --agent ppo --env-id MiniGrid-MultiRoom-N6-v0 --total-timesteps 200000 --max-steps 400
+```
+
+- Visualize
+```bash
+python main.py --mode visualize --agent ppo --env-id MiniGrid-MultiRoom-N6-v0 --checkpoint results/checkpoints/ppo_MiniGrid_MultiRoom_N6_v0_best.pt --max-steps 400
+```
+
+A2C:
+- Train
+```bash
+python main.py --mode train --agent a2c --env-id MiniGrid-MultiRoom-N6-v0 --total-timesteps 200000 --max-steps 400
+```
+
+- Visualize
+```bash
+python main.py --mode visualize --agent a2c --env-id MiniGrid-MultiRoom-N6-v0 --checkpoint results/checkpoints/a2c_MiniGrid_MultiRoom_N6_v0_best.pt --max-steps 400
 ```
 
 ## Notes
 
-- MiniGrid observations are dictionaries with `image`, `direction`, and `mission`; the default partial observation is a compact `7x7x3` symbolic encoding rather than raw pixels. Use wrappers if you want flattened or image-only observations. See Farama MiniGrid docs. citeturn0search2turn0search0
-- PPO in Stable-Baselines3 supports dictionary observations via `MultiInputPolicy`, and SB3 supports saving/loading checkpoints directly. citeturn1search1turn1search0
-- The POMCP implementation here is intentionally simplified so you can submit and iterate quickly; it uses cloned env states for simulation.
+- MiniGrid observations are dictionaries containing `image`, `direction`, and `mission`.  
+  For the main benchmark environments used in this project, PPO and A2C encode the local `7x7x3` symbolic observation plus direction into a flattened feature vector.
+
+- The standard PPO/A2C observation encoding has input dimension **984**:
+  - `7 x 7 = 49` cells
+  - each cell is one-hot encoded as `11` object classes + `6` colors + `3` states = `20`
+  - `49 x 20 = 980`
+  - plus `4` dimensions for direction
+  - total = `984`
+
+- Action subsets are environment-dependent:
+  - `Empty` / `FourRooms`: `left`, `right`, `forward`
+  - `MultiRoom`: `left`, `right`, `forward`, `toggle`
+  Including `toggle` is essential for MultiRoom; without it, the agent cannot open doors and the task becomes unsolvable.
+
+- PPO and A2C use **recurrent actor-critic networks with an LSTM** to handle partial observability.
+
+- Reward shaping is applied during training:
+  - step penalty: `-0.001` per step
+  - exploration bonus for first-time visits to new cells
+  The exploration bonus is disabled during evaluation so checkpoints are selected using clean task performance.
+
+- PPO and A2C save:
+  - final checkpoints in `results/checkpoints/`
+  - best checkpoints in `results/checkpoints/*_best.pt`
+  - reward history CSVs in `results/csv/`
+
+- POMCP is an **online planner**, not a learned policy:
+  - it does not save/load learned weights like PPO or A2C
+  - visualization runs the planner directly at test time
+  - it is much slower than PPO/A2C on larger environments
+
+- For plotting learning curves, use the CSV files in `results/csv/`.  
+  PPO/A2C history files log evaluation reward versus total timesteps, while POMCP logs episode-based results.
+
+- The main benchmark environments used in this project are:
+  - `MiniGrid-FourRooms-v0`
+  - `MiniGrid-MultiRoom-N2-S4-v0`
+  - `MiniGrid-MultiRoom-N4-S5-v0`
+  - `MiniGrid-MultiRoom-N6-v0`
