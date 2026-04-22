@@ -1,4 +1,4 @@
-# RL Navigation Project
+# RL POMDP Navigation Project
 
 Starter code for a MiniGrid MultiRoom project comparing:
 - POMCP
