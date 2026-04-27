@@ -1,4 +1,4 @@
-# RL POMDP Navigation Project
+# POMDP Navigation - Reinforcement Learning
 
 Starter code for a MiniGrid MultiRoom project comparing:
 - POMCP
