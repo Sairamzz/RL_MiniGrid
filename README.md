@@ -45,6 +45,21 @@ This project studies **navigation under partial observability** in the MiniGrid 
   - `MiniGrid-MultiRoom-N2-S4-v0`
   - `MiniGrid-MultiRoom-N4-S5-v0`
   - `MiniGrid-MultiRoom-N6-v0`
+ 
+## View Results
+
+Training and visualization outputs are saved under `results/`:
+
+- `results/checkpoints/` — saved model checkpoints (`.pt`)
+- `results/csv/` — learning curve data (`.csv`)
+- `results/figures/` — generated plots and rollout images (`.png`)
+- `results/trajectories/` — saved rollout trajectories (`.json`, if enabled)
+
+To view the generated figures, open the files inside:
+
+```bash
+results/figures/
+```
 
 ## How to Run
 
