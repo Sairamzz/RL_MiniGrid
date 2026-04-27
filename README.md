@@ -46,21 +46,6 @@ This project studies **navigation under partial observability** in the MiniGrid 
   - `MiniGrid-MultiRoom-N4-S5-v0`
   - `MiniGrid-MultiRoom-N6-v0`
  
-## View Results
-
-Training and visualization outputs are saved under `results/`:
-
-- `results/checkpoints/` — saved model checkpoints (`.pt`)
-- `results/csv/` — learning curve data (`.csv`)
-- `results/figures/` — generated plots and rollout images (`.png`)
-- `results/trajectories/` — saved rollout trajectories (`.json`, if enabled)
-
-To view the generated figures, open the files inside:
-
-```bash
-results/figures/
-```
-
 ## How to Run
 
 Starter code for a MiniGrid MultiRoom project comparing:
@@ -107,4 +92,18 @@ python main.py --mode train --agent a2c --env-id MiniGrid-MultiRoom-N6-v0 --tota
 ```bash
 python main.py --mode visualize --agent a2c --env-id MiniGrid-MultiRoom-N6-v0 --checkpoint results/checkpoints/a2c_MiniGrid_MultiRoom_N6_v0_best.pt --max-steps 400
 ```
+
+## View Results
+
+Training and visualization outputs are saved under `results/`:
+
+- `results/checkpoints/` — saved model checkpoints (`.pt`)
+- `results/csv/` — learning curve data (`.csv`)
+- `results/figures/` — generated plots and rollout images (`.png`)
+- `results/trajectories/` — saved rollout trajectories (`.json`, if enabled)
+
+To view the generated figures, open the files inside:
+
+```bash
+results/figures/
 
