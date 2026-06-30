@@ -106,4 +106,9 @@ To view the generated figures, open the files inside:
 
 ```bash
 results/figures/
+```
 
+## Contributors:
+
+- Sairam Sridharan
+- Aryaman Shardul
