@@ -110,5 +110,5 @@ results/figures/
 
 ## Contributors:
 
-- Sairam Sridharan
-- Aryaman Shardul
+- [Sairam Sridharan](https://github.com/Sairamzz)
+- [Aryaman Shardul](https://github.com/Aryaman22102002)
