@@ -1,4 +1,4 @@
-# POMDP Navigation - Reinforcement Learning
+# POMDP Navigation - Reinforcement Learning (CS 5180)
 
 ## Project Overview:
 This project studies **navigation under partial observability** in the MiniGrid benchmark using three different approaches: **POMCP**, **recurrent PPO**, and **recurrent A2C**. The goal is to compare **planning-based** and **learning-based** methods on environments of increasing difficulty, from simple room layouts to longer-horizon MultiRoom tasks that require **memory**, **exploration**, and **door interaction**. PPO and A2C use recurrent actor-critic policies with an LSTM to handle observation aliasing, while POMCP performs online planning from a particle-based belief state.
